@@ -462,7 +462,7 @@
         var loopDelay = (options.hasOwnProperty('loop_delay') ? options.loop_delay : 0);
         var overrideLoopMode = (options.hasOwnProperty('loop_mode') ? options.loop_mode : 'auto');
         var drawWhileLoading = (options.hasOwnProperty('draw_while_loading') ? options.draw_while_loading : true);
-        var showProgressBar = drawWhileLoading ? (options.hasOwnProperty('show_progress_bar') ? options.show_progress_bar : true) : false;
+        var showProgressBar = (options.hasOwnProperty('show_progress_bar') ? options.show_progress_bar : true);
 
         var clear = function () {
             transparency = null;
@@ -502,7 +502,7 @@
 
         var doShowProgress = function (pos, length, draw) {
             if (draw && showProgressBar) {
-                var height = 25;
+                var height = 3;
                 var left, mid, top, width;
                 if (options.is_vp) {
                     if (!ctx_scaled) {
